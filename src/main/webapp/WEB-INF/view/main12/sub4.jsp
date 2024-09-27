@@ -14,7 +14,10 @@
             border: 1px solid black;
         }
 
-        td:nth-child(1),
+        td:nth-child(1) {
+            text-align: center;
+        }
+
         td:nth-child(4),
         td:nth-child(5),
         td:nth-child(6) {
