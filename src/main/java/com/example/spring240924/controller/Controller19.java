@@ -23,7 +23,7 @@ public class Controller19 {
         System.out.println("age = " + age);
     }
 
-    // sub1.jsp 에 새 form 요소(와 input 요소들)를 작성해서
+    // sub2.jsp 에 새 form 요소(와 input 요소들)를 작성해서
     // 전송 버튼을 클릭하면
     // /main19/sub3?food=피자&email=yahoo&city=인천
     // 요청되게 작성하고

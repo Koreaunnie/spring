@@ -11,14 +11,14 @@ import org.springframework.web.context.request.WebRequest;
 public class Controller07 {
 
     @RequestMapping("sub1")
-    public void sub1(WebRequest request){
+    public void sub1(WebRequest request) {
 
-        request.setAttribute("data","손흥민", RequestAttributes.SCOPE_REQUEST);
-        // /WEB-INF/view/main7/sub1.jsp 로 request forwarding
+        request.setAttribute("data", "손흥민", RequestAttributes.SCOPE_REQUEST);
+        // /WEB-INF/view/main7/sub2.jsp 로 request forwarding
     }
 
     @RequestMapping("sub2")
-    public void sub2(Model model){
+    public void sub2(Model model) {
         model.addAttribute("person", "이강인");
     }
 }
