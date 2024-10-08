@@ -21,7 +21,7 @@ WHERE BirthDate = '1968-12-08';
 # 숫자 형식이면 따옴표 생략 가능
 SELECT *
 FROM Products
-WHERE Price > '10.00';
+WHERE Price = '10.00';
 
 SELECT *
 FROM Products
