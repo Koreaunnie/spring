@@ -1,8 +1,8 @@
 package com.example.spring240924.controller;
 
 import com.example.spring240924.dto.c24.Customer;
-import com.example.spring240924.dto.c24.Employees;
-import com.example.spring240924.dto.c24.Products;
+import com.example.spring240924.dto.c24.Employee;
+import com.example.spring240924.dto.c24.Product;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -88,22 +88,22 @@ public class Controller24 {
         ResultSet rs = stmt.executeQuery(sql);
 
         try (con; stmt; rs) {
-            List<Employees> list = new ArrayList<>();
+            List<Employee> list = new ArrayList<>();
 
             while (rs.next()) {
-                Employees employees = new Employees();
-                employees.setEmployeeID(rs.getString("EmployeeID"));
-                employees.setFirstName(rs.getString("FirstName"));
-                employees.setLastName(rs.getString("LastName"));
-                employees.setBirthDate(rs.getString("BirthDate"));
+                Employee employee = new Employee();
+                employee.setEmployeeID(rs.getString("EmployeeID"));
+                employee.setFirstName(rs.getString("FirstName"));
+                employee.setLastName(rs.getString("LastName"));
+                employee.setBirthDate(rs.getString("BirthDate"));
 
 //                아래처럼도 가능
-//                employees.setEmployeeID(rs.getString(1));
-//                employees.setFirstName(rs.getString(2));
-//                employees.setLastName(rs.getString(3));
-//                employees.setBirthDate(rs.getString(4));
+//                employee.setEmployeeID(rs.getString(1));
+//                employee.setFirstName(rs.getString(2));
+//                employee.setLastName(rs.getString(3));
+//                employee.setBirthDate(rs.getString(4));
 
-                list.add(employees);
+                list.add(employee);
             }
             model.addAttribute("employeeList", list);
         }
@@ -122,16 +122,16 @@ public class Controller24 {
         ResultSet rs = stmt.executeQuery(sql);
 
         try (con; stmt; rs) {
-            List<Products> list = new ArrayList<>();
+            List<Product> list = new ArrayList<>();
 
             while (rs.next()) {
-                Products products = new Products();
-                products.setId(rs.getString(1));
-                products.setName(rs.getString(2));
-                products.setUnit(rs.getString(3));
-                products.setPrice(rs.getString(4));
+                Product product = new Product();
+                product.setId(rs.getString(1));
+                product.setName(rs.getString(2));
+                product.setUnit(rs.getString(3));
+                product.setPrice(rs.getString(4));
 
-                list.add(products);
+                list.add(product);
             }
             model.addAttribute("productList", list);
         }

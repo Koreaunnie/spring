@@ -11,7 +11,7 @@ import static java.lang.StringTemplate.STR;
 public class Controller06 {
     @RequestMapping("sub1")
     @ResponseBody
-    public String sub1(String search){
+    public String sub1(String search) {
         String result = search + "를 검색한 결과";
 
         String html = STR."""
@@ -73,7 +73,7 @@ public class Controller06 {
     public String method6() {
 
         // return 이 null 이면 요청 경로와 같은 view 로 결정
-        // /WEB-INF/view/main6/sub6.jsp
+        // /WEB-INF/view/main6/sub7.jsp
         return "world";
     }
 

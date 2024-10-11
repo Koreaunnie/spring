@@ -3,7 +3,7 @@ package com.example.spring240924.dto.c24;
 import lombok.Data;
 
 @Data
-public class Products {
+public class Product {
     private String id;
     private String name;
     private String unit;
