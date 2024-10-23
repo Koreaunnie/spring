@@ -10,6 +10,7 @@
 </head>
 <body>
 <%-- navbar --%>
+
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container-fluid">
         <a class="navbar-brand" href="#">한강게시판</a>
