@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<body>
+<div id="option1">
+    <input type="text" id="input1">
+    <button id="btn1">
+        +
+    </button>
+
+    <div>
+        <ul id="list1"></ul>
+    </div>
+</div>
+
+<div id="option2">
+    <input type="text" id="input2">
+    <button id="btn2">
+        +
+    </button>
+
+    <div>
+        <ul id="list2"></ul>
+    </div>
+</div>
+
+<div id="option3">
+    <input type="text" id="input3">
+    <button class="btn3">
+        +
+    </button>
+
+    <div>
+        <ul id="list3"></ul>
+    </div>
+</div>
+
+<div id="option4">
+    <input type="text" id="input4">
+    <button id="btn4">
+        +
+    </button>
+
+    <button id="btn5">
+        -
+    </button>
+
+    <div>
+        <ul id="list4"></ul>
+    </div>
+</div>
+
+
+<script>
+  // # option 1
+  let a = document.querySelector("#btn1")
+  a.addEventListener("click", function () {
+    let l = document.querySelector("#list1")
+    let i = document.createElement("li")
+    i.innerHTML = "<input>";
+    l.append(i);
+  });
+
+  // # option 2
+  document.querySelector("#btn2")
+    .addEventListener("click", function () {
+      let i = document.createElement("li")
+      i.innerHTML = "<input>";
+      document.querySelector("#list2").append(i);
+    });
+
+
+  // # option 3
+  document.addEventListener("click", function (event) {
+    // 클릭한 요소가 '.btn3' 클래스가 있는지 확인
+    if (event.target.classList.contains("btn3")) {
+      let i = document.createElement("li");
+      i.innerHTML = "<input><button class='btn3'>+</button>";
+      // 가장 마지막 li 요소 뒤에 새로운 li 요소 추가
+      document.querySelector("#list3").appendChild(i);
+    }
+  });
+
+  //
+  document.querySelector("#btn4")
+    .addEventListener("click", function () {
+      let v = document.querySelector("#input4").value;
+      let li = document.createElement("li");
+      li.innerText = v;
+
+      document.querySelector("#list4").append(li);
+
+      // Reset the input box after adding the item
+      document.querySelector("#input1").value = "";
+
+      // Focus the input box after adding the item
+      document.querySelector("#input1").focus();
+    });
+
+  document.querySelector("#btn5")
+    .addEventListener("click", function () {
+      document.querySelector("#list4 > li:last-child").remove();
+    });
+</script>
+</body>
+</html>
