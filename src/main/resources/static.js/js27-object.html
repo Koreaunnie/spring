@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  function f1() {
+    return {
+      name: "son",
+      age: 33
+    }
+  };
+
+  let a = f1();
+  console.log(a.name); // son
+  console.log(a.age); // 33
+
+  let b = f1();
+  console.log(b.name); // son
+  console.log(b.age); // 33
+
+  a.name = "lee";
+  console.log(a.name); // lee
+  console.log(b.name); // son
+
+  // 참조값은 가르키고 있는 애한테 영향을 줌, 값은 영향 안 줌
+  // let a : 참조값
+  // return : 값
+  function f2() {
+    let a = {
+      city: "seoul"
+    };
+
+    return function () {
+      return a;
+    }
+  };
+
+  let c = f2();
+  let d = c();
+  console.log(d.city); // seoul
+  let e = c();
+  console.log(e.city); // seoul
+
+  d.city = "london";
+  console.log(d.city); // london
+  console.log(e.city); // london
+
+</script>
+</body>
+</html>

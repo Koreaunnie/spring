@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<body>
+<div id="box1">
+    <ul>
+        <li>Lorem.</li>
+        <li>Qui.</li>
+        <li>Esse?</li>
+    </ul>
+</div>
+<div id="box2">
+    <ul>
+        <li>Lorem.</li>
+        <li>Quo.</li>
+        <li>Minus?</li>
+    </ul>
+</div>
+
+<script>
+  let a = document.querySelector("#box1>ul>li:nth-child(2)");
+  console.log(a);
+  let b = document.querySelector("#box2>ul>li:last-child")
+
+  a.remove();
+  b.remove();
+
+</script>
+</body>
+</html>

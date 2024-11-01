@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<body>
+<div id="box1">
+    <ul>
+        <li>Lorem.</li>
+        <li>Qui.</li>
+        <li>Esse?</li>
+    </ul>
+</div>
+<div id="box2">
+    <ul>
+        <li>Lorem.</li>
+        <li>Quo.</li>
+        <li>Minus?</li>
+    </ul>
+</div>
+
+<script>
+  let a = document.querySelector("ul");
+
+  // append (마지막 자식)
+  // prepend (첫 번째 자식)
+  // after (동생)
+  // before (형)
+
+  let b = document.createElement("p");
+  b.innerText = "p 요소";
+  let c = document.createElement("li");
+  c.innerText = "li 요소";
+  let d = document.createElement("h1");
+  d.innerText = "h1 요소";
+  let e = document.createElement("li");
+  e.innerText = "li 요소2";
+
+  a.append(c);
+  a.prepend(e);
+  a.after(b);
+  a.before(d);
+
+  // 연습
+  let f = document.createElement("h2");
+  f.innerText = "hello";
+  let g = document.createElement("li");
+  g.innerText = "hi";
+  let h = document.createElement("li");
+  h.innerText = "bye";
+
+  a.before(f);
+  a.prepend(g);
+  a.append(h);
+</script>
+</body>
+</html>

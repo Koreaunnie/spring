@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+        .text {
+            color: forestgreen;
+        }
+    </style>
+
+</head>
+
+<body>
+<h1 id="head1" class="text" style="background: crimson">제목</h1>
+<p id="para1" class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid deserunt distinctio eius
+    eos, expedita explicabo
+    ipsam ipsum maiores molestias nemo nihil nostrum, obcaecati ratione recusandae rerum tempore totam veniam vero.</p>
+
+<script>
+  let a = document.querySelector("#head1");
+  let b = document.querySelector("#para1");
+
+  console.log(a.innerHTML);
+  console.log(b.innerHTML);
+  console.log(b.className);
+  console.log(b.id);
+
+  // document.querySelector()
+  // : css selector로 선택된 요소(element) 객체를 하나 리턴
+
+  let c = document.querySelector("#head1");
+  console.log(c.innerText);
+  console.log(c.innerHTML);
+  console.log(c.style.background);
+
+  c.innerHTML = "hello world";
+  c.style.background = "black";
+</script>
+</body>
+</html>

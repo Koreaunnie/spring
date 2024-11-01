@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  // 직접 만든 객체
+  let a = {
+    name: "son",
+    age: 33,
+    info: () => {
+      console.log("hello")
+    }
+  };
+  console.log(a.name);
+  console.log(a.age);
+  a.info();
+
+  // 이미 존재하는 객체 window (브라우저)
+  window.alert("alert");
+  window.confirm("confirm");
+  window.prompt("prompt");
+  console.log(window.innerWidth);
+  console.log(window.innerHeight);
+
+  // window 는 생략 가능
+  alert();
+  confirm();
+  prompt();
+  console.log(innerWidth);
+  console.log(innerHeight);
+</script>
+</body>
+</html>
