@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  let a = 3;
+  console.log(a);
+
+  let b = a;
+  console.log(b);
+
+  function func1() {
+    console.log("hello");
+  }
+
+  let c = func1;
+  console.log("func1 호출");
+  func1();
+  console.log("c 호출")
+  c();
+
+  let func2 = function () {
+    console.log("이름 없는 함수의 코드들...")
+  }
+  let d = func2;
+  func2();
+  d();
+
+  let func3 = () => console.log("화살표 함수  코드들...");
+  let e = func3;
+  func3();
+  e();
+
+  function func4() {
+    console.log("func4 코드들...");
+
+    return 33;
+  }
+
+  let f = func4; // 함수 자체를 그대로 저장
+  let g = func4(); // func4()를 호출하고 반환된 결과를 저장
+
+  console.log(f); // 함수 자체를 출력
+  console.log(g); // 33 (함수 호출 결과)
+
+  function func5() {
+    function func6() {
+      console.log("func6 의 코드들...");
+    }
+
+    console.log("func5 의 코드들...");
+
+    return func6;
+  }
+
+  let h = func5; // func5 함수를 그대로 저장
+  let i = func5(); // func5()를 호출하고 반환된 func6을 저장
+
+  console.log("------------------------------------");
+  h(); // "func5 의 코드들..."
+  i(); // "func6 의 코드들..."
+
+  console.log("====================================");
+
+  function func7(a) {
+    console.log("func7 코드들...");
+    a();
+  }
+
+  function func8(a) {
+    console.log("func8 코드들...");
+  }
+
+  function func9(a) {
+    console.log("func9 코드들...");
+  }
+
+  func7(func8);
+  func7(func9);
+  func7(function func10() {
+    console.log("func10 코드들...")
+  });
+  func7(function () {
+    console.log("이름 없는 함수 코드들...")
+  });
+  func7(() => console.log("애로우 펑션 코드들"));
+</script>
+</body>
+</html>
