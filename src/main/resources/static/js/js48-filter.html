@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  let a = [3, 1, 4, 1, 5, 9, 2];
+
+  // find : 가장 첫번 째 거 하나 복사 (원본 변경 x)
+  let f1 = a.find(e => e % 3 === 0);
+  console.log(f1); // 3
+
+  // filter : 배열 한 바퀴를 돌며 해당하는 값 복사 (원본 변경 x)
+  let f2 = a.filter(e => e % 3 === 0);
+  console.log(f2); // [3, 9]
+
+  let f3 = a.filter(e => e === 1);
+  console.log(f3); // [1, 1]
+
+  let f4 = a.find(e => e % 2 === 0);
+  console.log(f4);
+
+  //
+  let b = ["hankang", "faker", "rose", "son", "apt"];
+
+  // 세 글자인 아이템만 출력
+  let f5 = b.filter(e => e.length === 3);
+  console.log(f5);
+
+  // 4글자 이상인 아이템만 출력
+  let f6 = b.filter(e => e.length >= 4);
+  console.log(f6);
+
+  // 홀수 글자 수인 아이템만 출력
+  let f7 = b.filter(e => e.length % 2 === 1);
+  console.log(f7);
+
+  
+</script>
+</body>
+</html>

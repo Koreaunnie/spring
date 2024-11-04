@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p>Lorem.</p>
+<p>Vel.</p>
+<p>Similique.</p>
+<p>Commodi.</p>
+<p>Veniam!</p>
+
+<script>
+  // for, for of
+
+  // forEach : 배열의 모든 아이템 탐색
+  let a = [3, 1, 4, 1, 5, 9, 2];
+
+  console.log("===== for =====")
+  for (let i = 0; i < a.length; i++) {
+    console.log(a[i]);
+  }
+
+  console.log("===== for of =====")
+  for (let item of a) {
+    console.log(item);
+  }
+
+  console.log("===== forEach =====")
+  a.forEach((v) => {
+    console.log(v)
+  })
+
+  // 연습
+  let b = ["son", "lee", "kim", "choi"];
+  b.forEach((v) => {
+    console.log(v)
+  })
+
+  console.log("===== for =====")
+  for (let i = 0; i < b.length; i++) {
+    console.log(i, b[i])
+  }
+
+  console.log("===== forEach =====")
+  b.forEach((value, index) => { // value: 값, index: 인덱스
+    console.log(index, value)
+  })
+
+  // 연습
+  console.log("===== forEach 연습 =====")
+  let c = ["kim", "lee", "choi", "park"]
+  c.forEach((v, i) => {
+    console.log(i, v)
+  });
+
+  //
+  let paras = document.querySelectorAll("p");
+  paras.forEach((elem, index) => {
+    console.log(index, elem.innerHTML);
+  });
+
+  paras.forEach((elem) => {
+    elem.addEventListener("click", () => {
+      console.log(elem.innerHTML);
+    })
+  })
+</script>
+</body>
+</html>

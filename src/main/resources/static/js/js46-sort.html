@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!-- 버튼을 클릭하면 알파벳 순으로 정렬 -->
+<button id="ascBtn">오름차순 정렬</button>
+<button id="descBtn">내림차순 정렬</button>
+
+<div>
+    <p>Chapter</p>
+    <p>elephant</p>
+    <p>Alpha</p>
+    <p>data</p>
+    <p>Beta</p>
+</div>
+
+<script>
+  let list = [];
+  document.querySelectorAll("p")
+    .forEach((elem) => {
+      list.push(elem);
+    });
+  console.log("Initial list :", list);
+
+  document.querySelector("#ascBtn")
+    .addEventListener("click", function () {
+      list.sort((x, y) => {
+        if (x.innerText > y.innerText) {
+          return 1;
+        } else if (y.innerText > x.innerText) {
+          return -1;
+        } else {
+          return 0;
+        }
+      });
+      console.log("ASC sorted list:", list);
+
+      // 정렬된 순서대로 요소를 화면에 다시 추가
+      const div = document.querySelector("div");
+      list.forEach((elem) => {
+        div.appendChild(elem); // 정렬된 요소 순서대로 추가
+      })
+    });
+
+  document.querySelector("#descBtn")
+    .addEventListener("click", function () {
+      list.sort((x, y) => {
+        if (y.innerHTML > x.innerHTML) {
+          return 1;
+        } else if (x.innerHTML > y.innerHTML) {
+          return -1;
+        } else {
+          return 0;
+        }
+      });
+      console.log("DESC sorted list:", list);
+
+      const div = document.querySelector("div");
+      list.forEach(elem => {
+        div.appendChild(elem); // 정렬된 요소 순서대로 추가
+      });
+    });
+</script>
+</body>
+</html>

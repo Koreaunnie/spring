@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p>Lorem.</p>
+<p>Distinctio!</p>
+<p>Beatae!</p>
+<p>Officiis?</p>
+<p>Laudantium?</p>
+
+<script>
+  let a = ["f", "a", "k", "e", "r"];
+
+  for (let i = 0; i < a.length; i++) {
+    console.log(a[i]);
+  }
+
+  for (let i = a.length - 1; i >= 0; i--) {
+    console.log(a[i]);
+  }
+
+  // for of
+  for (let i of a) {
+    console.log(i)
+  }
+
+  // 연습
+  let b = [9, 8, 7, 6, 5, 4];
+
+  // b의 각 아이템을 log로 출력
+  for (let i = 0; i < b.length; i++) {
+    console.log(b[i]);
+  }
+
+  // b의 각 값을 모두 더한 값을 log로 출력
+  let sum = 0;
+  for (let n of b) {
+    sum += n;
+  }
+  console.log(sum);
+
+  // 배열은 아니지만 배열처럼 사용 가능
+  let paras = document.querySelectorAll("p");
+  console.log(paras.length); // 5
+
+  for (let i = 0; i < paras.length; i++) {
+    console.log(paras[i].innerHTML)
+  }
+
+  for (let e of paras) {
+    console.log(e.innerHTML);
+  }
+
+  // paras.push(`<p>a</p>`); // 불가
+  // console.log(paras[paras.length - 1]);
+</script>
+</body>
+</html>

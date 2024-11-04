@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  let a = [3, 1, 5, 7, 9, 11];
+
+  // 적어도 하나가 홀수인지
+  const r1 = a.some(e => e % 2 === 1);
+  console.log(r1); // ture
+
+  // 적어도 하나가 짝수인지
+  const r2 = a.some(e => e % 2 === 0);
+  console.log(r2); // false
+
+  // 연습
+  let b = ["kim yuna", "hankang", "ParkSungJin"];
+
+  // b의 아이템에 띄어쓰기가 하나라도 있는지
+  const r3 = b.some(e => e.includes(''));
+  console.log(r3); // true
+</script>
+</body>
+</html>
