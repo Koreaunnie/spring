@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  // Destructuring assignment
+  function f1({name, city}) {
+    console.log(name, city);
+  }
+
+  const a = {name: "kim", city: "seoul"};
+  f1(a);
+
+  // 고전적 방법 (위와 동일)
+  function f2(param) {
+    const name = param.name;
+    const city = param.city;
+    console.log(name, city);
+  }
+
+  f2(a);
+
+  // 연습
+  function f3({address, title, content}) {
+    console.log(address, title, content)
+  }
+
+  const b = {address: "korea", title: "채식주의자", content: "책 내용"};
+  f3(b);
+</script>
+</body>
+</html>

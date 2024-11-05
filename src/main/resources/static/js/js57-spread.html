@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  // spread (...)
+  const a = [3, 1, 4];
+  const b = [...a];
+
+  const c = [...a, 1]; // a가 가진 원소들 + 배열 1
+  console.log(c); // [3, 1, 4, 1]
+
+  const d = [5, ...a];
+  console.log(d); // [5, 3, 1, 4]
+
+  const e = [9, ...a, 1, 9];
+  console.log(e); // [9, 3, 1, 4, 1, 9]
+
+  const f = ["son", "rose", "apt"];
+  const g = [...a, ...f]; // [3, 1, 4, 'son', 'rose', 'apt']
+  console.log(g);
+
+  const h = [...f, ...a];
+  console.log(h); // ['son', 'rose', 'apt', 3, 1, 4]
+
+  const i = ["bruno", ...f, ...a, 1, 5];
+  console.log(i); // // ['bruno', 'son', 'rose', 'apt', 3, 1, 4]
+
+  // 연습
+  const j = [9, 10, 11];
+  const k = ["d", "e", "f"];
+  const l = [...j, ...k];
+  console.log(l); // [9, 10, 11, 'd', 'e', 'f']
+</script>
+</body>
+</html>
