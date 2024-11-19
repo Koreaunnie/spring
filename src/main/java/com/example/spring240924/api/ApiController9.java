@@ -2,6 +2,7 @@ package com.example.spring240924.api;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.security.core.Authentication;
 import org.springframework.security.oauth2.jwt.JwtClaimsSet;
 import org.springframework.security.oauth2.jwt.JwtEncoder;
 import org.springframework.security.oauth2.jwt.JwtEncoderParameters;
@@ -115,5 +116,15 @@ public class ApiController9 {
     @PreAuthorize("hasAnyAuthority('SCOPE_admin', 'SCOPE_manager')")
     public String sub9() {
         return "admin or manager only";
+    }
+
+    @GetMapping("sub10")
+    public String sub10(Authentication authentication) {
+        String name = authentication.getName(); // 사용자 이름
+        authentication.getAuthorities(); // 권한 목록
+        System.out.println("name = " + name);
+        System.out.println("authentication = " + authentication);
+        
+        return null;
     }
 }
