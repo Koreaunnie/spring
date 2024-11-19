@@ -47,4 +47,73 @@ public class ApiController9 {
     public String sub3() {
         return "로그인 한 사람만 접근 가능";
     }
+
+    @GetMapping("sub4")
+    public String sub4() {
+        System.out.println("ApiController9.sub1");
+
+        JwtClaimsSet claims = JwtClaimsSet.builder()
+                .issuer("self") // 누가
+                .subject("kim") // for 누구
+                .issuedAt(Instant.now()) // 언제 생성
+                .expiresAt(Instant.now().plusSeconds(3600)) // 언제까지
+                .claim("scope", "admin") // 권한
+                .build();
+
+        return jwtEncoder
+                .encode(JwtEncoderParameters.from(claims))
+                .getTokenValue();
+    }
+
+    @GetMapping("sub5")
+    public String sub5() {
+        System.out.println("ApiController9.sub1");
+
+        JwtClaimsSet claims = JwtClaimsSet.builder()
+                .issuer("self") // 누가
+                .subject("kim") // for 누구
+                .issuedAt(Instant.now()) // 언제 생성
+                .expiresAt(Instant.now().plusSeconds(3600)) // 언제까지
+                .claim("scope", "manager") // 권한
+                .build();
+
+        return jwtEncoder
+                .encode(JwtEncoderParameters.from(claims))
+                .getTokenValue();
+    }
+
+    @GetMapping("sub6")
+    public String sub6() {
+        System.out.println("ApiController9.sub1");
+
+        JwtClaimsSet claims = JwtClaimsSet.builder()
+                .issuer("self") // 누가
+                .subject("kim") // for 누구
+                .issuedAt(Instant.now()) // 언제 생성
+                .expiresAt(Instant.now().plusSeconds(3600)) // 언제까지
+                .claim("scope", "admin manager") // 권한
+                .build();
+
+        return jwtEncoder
+                .encode(JwtEncoderParameters.from(claims))
+                .getTokenValue();
+    }
+
+    @GetMapping("sub7")
+    @PreAuthorize("hasAuthority('SCOPE_admin')")
+    public String sub7() {
+        return "admin only";
+    }
+
+    @GetMapping("sub8")
+    @PreAuthorize("hasAuthority('SCOPE_manager')")
+    public String sub8() {
+        return "manager only";
+    }
+
+    @GetMapping("sub9")
+    @PreAuthorize("hasAnyAuthority('SCOPE_admin', 'SCOPE_manager')")
+    public String sub9() {
+        return "admin or manager only";
+    }
 }
