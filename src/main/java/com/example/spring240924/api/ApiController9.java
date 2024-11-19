@@ -1,6 +1,7 @@
 package com.example.spring240924.api;
 
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.oauth2.jwt.JwtClaimsSet;
 import org.springframework.security.oauth2.jwt.JwtEncoder;
 import org.springframework.security.oauth2.jwt.JwtEncoderParameters;
@@ -32,5 +33,18 @@ public class ApiController9 {
         return jwtEncoder
                 .encode(JwtEncoderParameters.from(claims))
                 .getTokenValue();
+    }
+
+    // 누구나 접근 가능
+    @GetMapping("sub2")
+    public String sub2() {
+        return "누구나 접근 가능";
+    }
+
+    // 로그인 한 사람만 접근 가능
+    @GetMapping("sub3")
+    @PreAuthorize("isAuthenticated()")
+    public String sub3() {
+        return "로그인 한 사람만 접근 가능";
     }
 }
